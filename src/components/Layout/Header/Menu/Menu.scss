@@ -1,0 +1,32 @@
+@import "public/styles/modules/colors";
+@import "public/styles/modules/functions";
+@import "public/styles/modules/sizes";
+
+.main-menu {
+  .close-icon {
+    display: none;
+  }
+
+  @media screen and (max-width: $sm-max) {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: $black;
+
+    .close-icon {
+      display: block;
+      color: $white;
+      position: absolute;
+      right: rem(10);
+      top: rem(10);
+      font-size: em(40);
+      cursor: pointer;
+    }
+  }
+}
+

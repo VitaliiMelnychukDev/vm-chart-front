@@ -1,0 +1,16 @@
+@import "../../../../public/styles/modules/colors";
+@import "../../../../public/styles/modules/functions";
+
+.subheader {
+  display: flex;
+  align-items: center;
+  height: rem(75);
+  background-color: $green;
+  padding: rem(10) 0;
+
+  .subheader-text {
+    font-size: em(22);
+    color: $white;
+    text-transform: capitalize;
+  }
+}

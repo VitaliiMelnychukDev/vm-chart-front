@@ -1,0 +1,25 @@
+@import "../../../../../public/styles/modules/colors";
+@import "../../../../../public/styles/modules/functions";
+
+.article-container {
+  width: 100%;
+
+  .article-title {
+    font-size: em(17);
+    margin-bottom: rem(14);
+    text-transform: uppercase;
+  }
+
+  .article-description {
+    font-size: em(14);
+    margin-bottom: rem(14);
+    color: $grey;
+  }
+
+  .article-image {
+    background-position: center;
+    background-size: cover;
+    height: rem(300);
+    width: 100%;
+  }
+}

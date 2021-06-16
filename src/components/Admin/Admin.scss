@@ -1,0 +1,25 @@
+@import "public/styles/modules/functions";
+@import "public/styles/modules/sizes";
+
+.admin-container {
+  .admin-message {
+    font-size: em(28);
+    padding: rem(20) 0;
+  }
+  .admin-buttons {
+    display: flex;
+
+    a {
+      display: block;
+      margin-right: rem(30);
+      margin-bottom: rem(25);
+    }
+  }
+
+  @media screen and (max-width: $sm-max) {
+    .admin-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

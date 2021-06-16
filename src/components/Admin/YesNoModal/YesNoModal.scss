@@ -1,0 +1,23 @@
+@import "public/styles/modules/functions";
+
+.yes-no-container {
+  .yes-no-text {
+    font-size: em(25);
+    margin-bottom: rem(20);
+  }
+
+  .yes-no-buttons-container {
+    display: flex;
+    justify-content: center;
+
+    .yes-no-buttons {
+      .yes-button {
+        margin-right: rem(20);
+      }
+
+      button {
+        min-width: rem(100);
+      }
+    }
+  }
+}

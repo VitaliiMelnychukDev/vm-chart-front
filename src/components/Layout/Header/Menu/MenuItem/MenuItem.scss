@@ -1,0 +1,49 @@
+@import "public/styles/modules/colors";
+@import "public/styles/modules/functions";
+@import "public/styles/modules/sizes";
+
+.main-menu-item {
+  margin-right: rem(20);
+
+  * {
+    color: $grey;
+    font-size: em(19);
+    text-decoration: none;
+
+    &:hover {
+      color: $green;
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (max-width: $sm-max) {
+    height: rem(50);
+    border-bottom: rem(2) solid $black;
+    background-color: $grey-dark;
+    margin-right: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      background-color: $grey-average;
+    }
+
+    span {
+      width: 100%;
+      display: block;
+    }
+
+    a {
+      width: 100%;
+      display: block;
+      font-size: rem(25);
+      color: white;
+      padding-left: rem(20);
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}

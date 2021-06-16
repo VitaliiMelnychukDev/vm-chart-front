@@ -1,0 +1,15 @@
+@import "public/styles/modules/colors";
+@import "public/styles/modules/functions";
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: rem(6) solid $green;
+  background-color: $almost-black;
+  text-align: center;
+  color: $white;
+  height: rem(50);
+  font-size: em(14);
+  margin-top: auto;
+}

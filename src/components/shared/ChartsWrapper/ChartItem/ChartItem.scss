@@ -1,0 +1,24 @@
+@import "../../../../../public/styles/modules/colors";
+@import "../../../../../public/styles/modules/functions";
+
+.chart-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .chart-title {
+    font-size: em(17);
+    margin-bottom: rem(14);
+    text-transform: uppercase;
+  }
+
+  .chart-description {
+    font-size: em(15);
+    margin-bottom: rem(14);
+    color: $grey;
+  }
+
+  a {
+    margin-top: auto;
+  }
+}

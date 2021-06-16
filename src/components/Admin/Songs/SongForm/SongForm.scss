@@ -1,0 +1,17 @@
+@import "public/styles/modules/functions";
+
+.song-form-container {
+  display: flex;
+  flex-direction: column;
+  max-width: rem(300);
+  margin: 0 auto;
+
+  div, button {
+    margin-bottom: rem(10);
+  }
+
+  button {
+    width: rem(170);
+    align-self: center;
+  }
+}

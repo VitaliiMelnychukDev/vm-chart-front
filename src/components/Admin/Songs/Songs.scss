@@ -1,0 +1,12 @@
+.songs-page-wrapper {
+  position: relative;
+
+  .songs-table-header {
+    display: flex;
+    align-items: center;
+
+    a {
+      margin-left: auto;
+    }
+  }
+}

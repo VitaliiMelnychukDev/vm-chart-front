@@ -1,0 +1,13 @@
+@import "public/styles/modules/functions";
+@import "public/styles/modules/sizes";
+
+.home-articles-container {
+  margin: rem(20) 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: rem(20);
+
+  @media screen and (max-width: $sm-max) {
+    grid-template-columns: 1fr;
+  }
+}

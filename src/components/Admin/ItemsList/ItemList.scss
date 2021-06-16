@@ -1,0 +1,34 @@
+@import "public/styles/modules/colors";
+@import "public/styles/modules/functions";
+
+.list-container {
+  .list-item {
+    background-color: $black;
+    opacity: 0.85;
+    min-height: rem(70);
+    display: flex;
+    margin-bottom: rem(2);
+
+    .item-title {
+      color: $white;
+      font-size: em(25);
+      align-self: center;
+      padding-left: rem(20);
+    }
+
+    .item-action {
+      display: flex;
+      flex-direction: column;
+      padding: rem(5) rem(10);
+      margin-left: auto;
+
+      a {
+        margin-top: auto;
+      }
+      .item-edit, .item-remove {
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}

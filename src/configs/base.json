@@ -1,0 +1,6 @@
+{
+  "CHARTS_API_URL": "http://localhost:3001/",
+  "PAGINATION": {
+    "COUNT_PER_PAGE": 9
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "header": {
+    "menu-item": {
+      "admin": "Admin",
+      "home": "Home",
+      "charts": "Charts",
+      "songs": "Songs",
+      "genres": "Genres",
+      "admin": "Admin",
+      "logout": "Logout"
+    },
+    "title": "VM Music"
+  },
+  "footer": {
+    "title": "VM Music © 2021"
+  },
+  "pagination": {
+    "prev": "prev",
+    "next": "next",
+    "break-label": "..."
+  },
+  "genres": {
+    "title": "All Genres In One Place"
+  },
+  "home": {
+    "titles": {
+      "explore-new-music": "Explore New Music",
+      "explore-best-charts": "Explore Best Charts"
+    },
+    "charts": {
+      "top-100-rock": {
+        "name": "Top 100 Rock",
+        "description": "Best Rock Songs"
+      },
+      "top-100-metal": {
+        "name": "Top 100 Metal",
+        "description": "Explore New Metal Music. Metal is a type of rock music that first appeared and became popular in the late 1960s and early 1970s in the UK"
+      },
+      "modern-punk": {
+        "name": "Modern Punk",
+        "description": "Find New Punk Rock Songs"
+      }
+    }
+  },
+  "genre": {
+    "title": "Explore Charts",
+    "errors": {
+      "charts-not-found": "Charts did not found for this genre"
+    },
+    "buttons": {
+      "go-to-genres": "Go To Genres"
+    }
+  },
+
+  "chart": {
+    "errors": {
+      "chart-did-not-found": "Chart Did Not Found",
+      "chart-does-not-have-songs": "Chart Does Not Contain Songs. Please try another chart"
+    },
+    "buttons": {
+      "go-to-charts": "Go To Charts"
+    }
+  },
+  "not-found": {
+    "title": "Page Not Found",
+    "text": "We can not seems to find the page you're looking for. Try going back to the previous page.",
+    "buttons": {
+      "go-to-home": "Go To Home Page"
+    }
+  },
+  "admin": {
+    "title": "Admin Page",
+    "text": "Hello {{name}}. Please chose action you want to do.",
+    "buttons": {
+      "view-charts": "View Charts",
+      "view-songs": "View Songs"
+    }
+  },
+  "songs": {
+    "title": "Songs List",
+    "search-text": "Enter song or author",
+    "delete-message": "Do you really want to remove this song? ",
+    "errors": {
+      "remove-fail": "Song was not removed successfully. Please try later"
+    },
+    "buttons": {
+      "create-song": "Create Song"
+    },
+    "form": {
+      "labels": {
+        "name": "Name",
+        "author": "Author",
+        "year": "Year"
+      },
+      "buttons": {
+        "create-song": "Create Song",
+        "update-song": "Update Song",
+        "go-to-songs": "Go To Songs"
+      }
+    },
+    "errors": {
+      "create-fail": "Song was not successfully created. Please try later.",
+      "update-fail": "Song was not successfully updated. Please try later.",
+      "get-fail": "Can not get songs. Please try later."
+    },
+    "messages": {
+      "song-created": "Song was successfully created",
+      "song-updated": "Song was successfully updated"
+    }
+  },
+  "charts": {
+    "title": "Charts List"
+  },
+  "login": {
+    "title": "Login using your email and password",
+    "form": {
+      "label": {
+        "email": "Email",
+        "password": "Password"
+      },
+      "buttons": {
+        "login": "Login"
+      }
+    },
+    "errors": {
+      "login-fail": "Email or password is not valid"
+    }
+  },
+  "shared": {
+    "buttons": {
+      "open-chart": "Open Chart",
+      "go-to-admin": "Go To Admin Page",
+      "yes": "Yes",
+      "no": "No"
+    },
+    "errors": {
+      "server-error": "Some Error occured. Please try again later.",
+      "title-error": "Some Error occured",
+      "no-permissions": "You do not have permissions to execute this action"
+    },
+    "articles": {
+      "metal": {
+        "title": "Metal Charts",
+        "description": "Enjoy metal music"
+      },
+      "grunge": {
+        "title": "Grunge Charts",
+        "description": "Explore new grunge music"
+      },
+      "punk": {
+        "title": "Punk Charts",
+        "description": "Find new punk songs"
+      },
+      "all": {
+        "title": "All Charts",
+        "description": "All rock genres in one place"
+      },
+      "general": {
+        "title": "General Charts",
+        "description": "Find new rock songs"
+      },
+      "alternative": {
+        "title": "Alternative Charts",
+        "description": "New alternative music in one place"
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@import "./fonts";
+
+@function rem($size) {
+  @return $size / $base-font-size * 1rem;
+}
+
+@function em($size) {
+  @return $size / $base-font-size * 1rem;
+}

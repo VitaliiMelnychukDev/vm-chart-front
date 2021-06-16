@@ -1,0 +1,11 @@
+@import "../../../../public/styles/modules/functions";
+
+.go-back-container {
+  margin-top: rem(40);
+  display: flex;
+
+  a {
+    margin-right: rem(10);
+    margin-left: auto;
+  }
+}

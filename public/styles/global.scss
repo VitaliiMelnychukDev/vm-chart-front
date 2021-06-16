@@ -1,0 +1,32 @@
+@import "fonts";
+@import "./modules/sizes";
+@import "./modules/functions";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  max-width: 994px;
+  width: 100%;
+  margin: 0 auto;
+  padding: rem(10) 0;
+
+  @media screen and (max-width: $md-max) {
+    max-width: 100%;
+    padding-left: rem(10);
+    padding-right: rem(10);
+  }
+}
+
+a {
+  text-decoration: none;
+}

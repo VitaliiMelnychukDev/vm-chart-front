@@ -1,0 +1,34 @@
+@import "public/styles/modules/colors";
+@import "public/styles/modules/functions";
+@import "public/styles/modules/sizes";
+
+.header {
+  height: rem(90);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .open-menu {
+    display: none;
+  }
+
+  .header-title {
+    font-size: em(27);
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: $sm-max) {
+    .open-menu {
+      display: block;
+      font-size: rem(45);
+      cursor: pointer;
+    }
+
+    .menu-container {
+      &.mobile-menu-hidden {
+        display: none;
+      }
+    }
+  }
+}
