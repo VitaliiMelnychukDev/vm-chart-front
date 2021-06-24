@@ -1,15 +1,16 @@
-import {homeMenuItem} from './main';
-import {adminPath} from '../paths/admin/admin';
+import { homeMenuItem } from './main';
+import { adminChartPath } from '../paths/admin/chart';
+import { adminSongPath } from '../paths/admin/song';
 
 const adminMenuItems = [
   homeMenuItem,
   {
     title: 'header.menu-item.charts',
-    link: adminPath.charts
+    link: adminChartPath.charts
   },
   {
     title: 'header.menu-item.songs',
-    link: adminPath.songs
+    link: adminSongPath.songs
   }
 ];
 

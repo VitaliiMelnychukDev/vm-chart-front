@@ -1,0 +1,40 @@
+@import "public/styles/modules/functions";
+@import "public/styles/modules/sizes";
+
+.chart-form-container {
+  display: flex;
+  flex-direction: column;
+  max-width: rem(400);
+  margin: 0 auto;
+
+  div, button {
+    margin-bottom: rem(10);
+  }
+
+  .buttons-container {
+    display: flex;
+
+    button {
+      width: rem(165);
+      align-self: center;
+    }
+
+    .update-chart-songs {
+      margin-left: auto;
+    }
+  }
+
+  @media screen and (max-width: $sm-max) {
+    .buttons-container {
+      flex-direction: column;
+
+      button {
+        margin-bottom: rem(10);
+      }
+
+      .update-chart-songs {
+        margin-left: 0;
+      }
+    }
+  }
+}

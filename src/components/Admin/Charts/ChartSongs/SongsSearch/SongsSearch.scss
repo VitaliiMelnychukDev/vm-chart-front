@@ -1,0 +1,33 @@
+@import "public/styles/modules/colors";
+@import "public/styles/modules/functions";
+.chart-songs-container {
+  .list-container {
+    .list-item {
+      background-color: $black;
+      opacity: 0.85;
+      min-height: rem(70);
+      display: flex;
+      margin-bottom: rem(2);
+
+      .song-title {
+        color: $white;
+        font-size: em(25);
+        align-self: center;
+        padding-left: rem(20);
+      }
+
+      .search-songs-actions {
+        display: flex;
+        padding: rem(5) rem(10);
+        margin-left: auto;
+
+        .search-song-add {
+          color: white;
+          cursor: pointer;
+          align-self: center;
+          font-size: em(35);
+        }
+      }
+    }
+  }
+}

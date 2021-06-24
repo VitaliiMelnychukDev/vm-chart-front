@@ -1,5 +1,5 @@
 import * as config from '../configs/base.json';
-import { apiChartPath } from '../constants/api/chart';
+import { apiChartPath, baseApiChartPath } from '../constants/api/chart';
 import { baseApiSongPath } from '../constants/api/song';
 
 export class ApiUrlHelper {
@@ -30,5 +30,9 @@ export class ApiUrlHelper {
 
   static getSongUrl(songId) {
     return `${baseApiSongPath}${songId}`;
+  }
+
+  static getChartUrlById(chartId) {
+    return `${baseApiChartPath}${chartId}`;
   }
 }

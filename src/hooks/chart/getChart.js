@@ -1,29 +1,19 @@
 import { useEffect, useState } from 'react';
 import { ApiUrlHelper } from '../../helpers/apiUrl';
-import vmHttpClient from '../../clients/vmHttpClient';
+import useGetItem from '../base/getBase';
 
-const useGetChart = (chartId) => {
-  const [chart, setChart] = useState(null);
-  const [loadingStatus, setLoadingStatus] = useState({ loading: false });
+const useGetChart = () => {
+  const [item, setItemUrlToGet, loadingStatus] = useGetItem();
+  const [chartIdToGet, setChartIdToGet] = useState(null);
 
   useEffect ( () => {
-    async function getChart() {
-      setLoadingStatus({loading: true});
-
-      try {
-        const chart = await vmHttpClient.get(ApiUrlHelper.getChartUrl(chartId));
-
-        setChart(chart);
-        setLoadingStatus({loading: false});
-      } catch (e) {
-        setLoadingStatus({loading: false, error: e.statusCode});
-      }
+    if (!chartIdToGet) {
+      return;
     }
+    setItemUrlToGet(ApiUrlHelper.getChartUrlById(chartIdToGet));
+  },[chartIdToGet]);
 
-    getChart();
-  },[]);
-
-  return [chart, loadingStatus];
+  return [item, setChartIdToGet, loadingStatus];
 };
 
 export default useGetChart;

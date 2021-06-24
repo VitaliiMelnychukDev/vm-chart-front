@@ -1,34 +1,19 @@
 import { useEffect, useState } from 'react';
-import vmHttpClient from '../../clients/vmHttpClient';
 import { ApiUrlHelper } from '../../helpers/apiUrl';
+import useGetItem from '../base/getBase';
 
 const useGetSong = () => {
+  const [item, setItemUrlToGet, loadingStatus] = useGetItem();
   const [songIdToGet, setSongIdToGet] = useState(null);
-  const [song, setSong] = useState(null);
-  const [loadingStatus, setLoadingStatus] = useState({ loading: false });
 
   useEffect ( () => {
-    async function getSong() {
-      if (!songIdToGet) {
-        return;
-      }
-
-      setLoadingStatus({ loading: true });
-
-      try {
-        const song = await vmHttpClient.get(ApiUrlHelper.getSongUrl(songIdToGet));
-
-        setSong(song);
-        setLoadingStatus({ loading: false, success: true });
-      } catch (e) {
-        setLoadingStatus({ loading: false, error: e.statusCode });
-      }
+    if (!songIdToGet) {
+      return;
     }
-
-    getSong();
+    setItemUrlToGet(ApiUrlHelper.getSongUrl(songIdToGet));
   },[songIdToGet]);
 
-  return [song, setSongIdToGet, loadingStatus];
+  return [item, setSongIdToGet, loadingStatus];
 }
 
 export default useGetSong;

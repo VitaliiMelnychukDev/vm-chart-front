@@ -1,29 +1,17 @@
 import { useEffect, useState } from 'react';
 import { ApiUrlHelper } from '../../helpers/apiUrl';
-import vmHttpClient from '../../clients/vmHttpClient';
+import useRemoveItem from '../base/removeBase';
 
 const useRemoveSong = () => {
+  const [loadingStatus, setRemoveUrl] = useRemoveItem();
   const [songIdToRemove, setSongIdToRemove] = useState('');
-  const [loadingStatus, setLoadingStatus] = useState({ loading: false });
 
   useEffect ( () => {
-    async function removeSong() {
-      if (!songIdToRemove) {
-        return;
-      }
-
-      setLoadingStatus({loading: true});
-
-      try {
-        await vmHttpClient.delete(ApiUrlHelper.getSongUrl(songIdToRemove));
-
-        setLoadingStatus({ loading: false, success: true });
-      } catch (e) {
-        setLoadingStatus({ loading: false, error: e.statusCode });
-      }
+    if (!songIdToRemove) {
+      return;
     }
 
-    removeSong();
+    setRemoveUrl(ApiUrlHelper.getSongUrl(songIdToRemove));
   },[songIdToRemove]);
 
   return [loadingStatus, setSongIdToRemove];

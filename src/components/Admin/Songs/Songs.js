@@ -10,7 +10,7 @@ import ItemsList from '../ItemsList/ItemsList';
 import useAuth from '../../../store/auth';
 import { UserHelper } from '../../../helpers/user';
 import Search from '../Search/Search';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Modal from '../../shared/Modal/Modal';
 import YesNoModal from '../YesNoModal/YesNoModal';
 import useRemoveSong from '../../../hooks/songs/removeSong';
@@ -21,15 +21,12 @@ import { Link } from 'react-router-dom';
 import { adminSongPath } from '../../../constants/paths/admin/song';
 import { UrlHelper } from '../../../helpers/url';
 
-
-//TODO removing does not work correctly.
 const Songs = () => {
   const { t } = useTranslation();
   const { user } = useAuth();
   const [pageCount, songs, loadingStatus, setPage, setFilters] = useSearchSongs();
   const [deleteSongId, setDeleteSongId] = useState('');
   const [removeSongLoadingStatus, setSongIdToRemove] = useRemoveSong();
-  const [songsAreUpToDate, setSongsAreUpToDate] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
 
   const handlePageClick = (e) => {
@@ -43,7 +40,6 @@ const Songs = () => {
   const onRemoveItemYes = () => {
     setSongIdToRemove(deleteSongId);
     setDeleteSongId('');
-    setSongsAreUpToDate(false);
   }
 
   const onRemoveItemNo = () => {
@@ -53,13 +49,22 @@ const Songs = () => {
   const onFindSong = (e) => {
     const searchTerm = e.target.value;
 
-    if (searchTerm) {
+    if (searchTerm || searchTerm === '') {
       setFilters({
         searchTerm
       })
       setSearchTerm(searchTerm);
     }
   }
+
+  useEffect(() => {
+    if (removeSongLoadingStatus && removeSongLoadingStatus.success) {
+      setFilters({
+        searchTerm,
+        timestamp: Date.now()
+      });
+    }
+  }, [removeSongLoadingStatus]);
 
   const getItemsListsToShow = () => {
     return songs.map((song) => {
@@ -85,7 +90,7 @@ const Songs = () => {
     return <ItemsList {...manageProps} items={getItemsListsToShow()} />
   }
 
-  const content = loadingStatus.loading ? <Loader /> : getContent();
+  const content = loadingStatus && loadingStatus.loading ? <Loader /> : getContent();
 
   const deleteSongBlock = deleteSongId ? ( <Modal>
     <YesNoModal onYes={onRemoveItemYes} onNo={onRemoveItemNo} text="songs.delete-message" />
@@ -97,18 +102,13 @@ const Songs = () => {
     ? <Alert severity="error">{t('songs.errors.remove-fail')}</Alert>
     : '';
 
-  if (removeSongLoadingStatus && removeSongLoadingStatus.success && !songsAreUpToDate ) {
-    setPage(1);
-    setFilters({
-      searchTerm,
-      timestamp: Date.now()
-    });
-
-    setSongsAreUpToDate(true);
-  }
-
   const createSongButton = UserHelper.canManageSongs(user.roles) ? ( <Link to={adminSongPath.create} >
-    <Button type="submit" size="large" variant="contained" color="primary">{t('songs.buttons.create-song')}</Button>
+    <Button
+      type="submit"
+      size="large"
+      variant="contained"
+      color="primary"
+    >{t('songs.buttons.create-song')}</Button>
   </Link> ) : '';
 
   return (

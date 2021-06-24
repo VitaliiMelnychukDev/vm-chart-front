@@ -51,7 +51,6 @@
       "go-to-genres": "Go To Genres"
     }
   },
-
   "chart": {
     "errors": {
       "chart-did-not-found": "Chart Did Not Found",
@@ -80,9 +79,6 @@
     "title": "Songs List",
     "search-text": "Enter song or author",
     "delete-message": "Do you really want to remove this song? ",
-    "errors": {
-      "remove-fail": "Song was not removed successfully. Please try later"
-    },
     "buttons": {
       "create-song": "Create Song"
     },
@@ -101,11 +97,48 @@
     "errors": {
       "create-fail": "Song was not successfully created. Please try later.",
       "update-fail": "Song was not successfully updated. Please try later.",
-      "get-fail": "Can not get songs. Please try later."
+      "get-fail": "Can not get songs. Please try later.",
+      "remove-fail": "Song was not removed successfully. Please try later"
     },
     "messages": {
       "song-created": "Song was successfully created",
       "song-updated": "Song was successfully updated"
+    }
+  },
+  "admin-charts": {
+    "title": "Charts List",
+    "search-text": "Enter chart name",
+    "delete-message": "Do you really want to remove this chart? ",
+    "text": {
+      "update-chart-songs": "Update Chart Songs"
+    },
+    "buttons": {
+      "create-chart": "Create Chart"
+    },
+    "form": {
+      "labels": {
+        "name": "Name",
+        "slug": "Url Slug",
+        "description": "Description",
+        "genre": "Genre"
+      },
+      "buttons": {
+        "create-chart": "Create Chart",
+        "update-chart": "Update Chart",
+        "go-to-charts": "Go To Charts",
+        "update-chart-songs": "Update Songs",
+        "save-songs-positions": "Save Songs Positions"
+      }
+    },
+    "errors": {
+      "create-fail": "Chart was not successfully created. Please try later.",
+      "update-fail": "Chart was not successfully updated. Please try later.",
+      "get-fail": "Can not get chart. Please try later.",
+      "remove-fail": "Chart was not removed successfully. Please try later"
+    },
+    "messages": {
+      "chart-created": "Chart was successfully created",
+      "chart-updated": "Chart was successfully updated"
     }
   },
   "charts": {

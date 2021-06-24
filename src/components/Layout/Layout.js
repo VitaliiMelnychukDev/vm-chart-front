@@ -21,6 +21,10 @@ import Charts from '../Charts/Charts';
 import { adminSongPath } from '../../constants/paths/admin/song';
 import CreateSong from '../Admin/Songs/CreateSong/CreateSong';
 import UpdateSong from '../Admin/Songs/UpdateSong/UpdateSong';
+import { adminChartPath } from '../../constants/paths/admin/chart';
+import CreateChart from '../Admin/Charts/CreateChart/CreateChart';
+import UpdateChart from '../Admin/Charts/UpdateChart/UpdateChart';
+import ChartSongs from '../Admin/Charts/ChartSongs/ChartSongs';
 
 const Layout = () => {
   return (
@@ -37,7 +41,10 @@ const Layout = () => {
           <PrivateRoute path={adminSongPath.songs} exact component={Songs} />
           <PrivateRoute path={adminSongPath.create} exact component={CreateSong} />
           <PrivateRoute path={adminSongPath.update} exact component={UpdateSong} />
-          <PrivateRoute path={adminPath.charts} exact component={AdminCharts} />
+          <PrivateRoute path={adminChartPath.charts} exact component={AdminCharts} />
+          <PrivateRoute path={adminChartPath.create} exact component={CreateChart} />
+          <PrivateRoute path={adminChartPath.update} exact component={UpdateChart} />
+          <PrivateRoute path={adminChartPath.updateSongs} exact component={ChartSongs} />
           <Route path={adminPath.login} exact component={Login} />
           <Route component={PageNotFound} />
         </Switch>

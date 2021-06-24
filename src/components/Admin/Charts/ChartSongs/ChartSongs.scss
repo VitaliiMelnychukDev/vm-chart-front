@@ -1,0 +1,49 @@
+@import "public/styles/modules/colors";
+@import "public/styles/modules/functions";
+.chart-songs-container {
+  .list-container {
+    .list-item {
+      background-color: $black;
+      opacity: 0.85;
+      min-height: rem(70);
+      display: flex;
+      margin-bottom: rem(2);
+
+      .song-title {
+        color: $white;
+        font-size: em(25);
+        align-self: center;
+        padding-left: rem(20);
+      }
+
+      .chart-songs-actions {
+        display: flex;
+        padding: rem(5) rem(10);
+        margin-left: auto;
+
+        .chart-songs-up-down-actions {
+          display: flex;
+          flex-direction: column;
+
+          .chart-song-arrow-down {
+            margin-top: auto;
+          }
+        }
+
+        .chart-songs-remove-action {
+          align-self: center;
+        }
+
+        .chart-song-arrow-up, .chart-song-arrow-down, .chart-song-arrow-remove {
+          color: white;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .save-songs-positions {
+    display: flex;
+    margin: rem(20) auto;
+  }
+}

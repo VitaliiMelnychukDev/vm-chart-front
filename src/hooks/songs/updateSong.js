@@ -1,29 +1,20 @@
 import { useEffect, useState } from 'react';
-import vmHttpClient from '../../clients/vmHttpClient';
 import { ApiUrlHelper } from '../../helpers/apiUrl';
+import useUpdateItem from '../base/updateBase';
 
 const useUpdateSong = () => {
   const [songToUpdate, setSongToUpdate] = useState({});
-  const [loadingStatus, setLoadingStatus] = useState({ loading: false });
+  const [loadingStatus, setSongDataToUpdate] = useUpdateItem();
 
   useEffect ( () => {
-    async function updateSong() {
-      if (!songToUpdate || !songToUpdate.id || !songToUpdate.body) {
-        return;
-      }
-
-      setLoadingStatus({ loading: true });
-
-      try {
-        await vmHttpClient.patch(ApiUrlHelper.getSongUrl(songToUpdate.id), songToUpdate.body);
-
-        setLoadingStatus({ loading: false, success: true });
-      } catch (e) {
-        setLoadingStatus({ loading: false, error: e.statusCode });
-      }
+    if (!songToUpdate || !songToUpdate.id || !songToUpdate.body) {
+      return;
     }
 
-    updateSong();
+    setSongDataToUpdate({
+      url: ApiUrlHelper.getSongUrl(songToUpdate.id),
+      body: songToUpdate.body
+    });
   },[songToUpdate]);
 
   return [loadingStatus, setSongToUpdate];

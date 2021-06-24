@@ -19,10 +19,14 @@ const SongForm = ({ song }) => {
   const [updateSongLoadingStatus, setSongToUpdate] = useUpdateSong();
 
   const onFromSubmit = (data) => {
+    if (data && data.year) {
+      data.year = parseInt(data.year);
+    }
+
     if (!song || !song._id) {
       setSongToCreate(data);
     } else {
-      setSongToUpdate({id: song._id, body: data});
+      setSongToUpdate({ id: song._id, body: data });
     }
   }
 
@@ -94,6 +98,7 @@ const SongForm = ({ song }) => {
         ({ field }) =>
           <TextField
             {...field}
+            type="number"
             error={!!errors.year}
             id="standard-name"
             label={t('songs.form.labels.year')}

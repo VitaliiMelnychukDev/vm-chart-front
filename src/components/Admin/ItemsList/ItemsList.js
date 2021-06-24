@@ -16,7 +16,7 @@ const ItemsList = ({ items, onRemove }) => {
   const itemsToShow = items.map((item) => {
     return <div className="list-item" key={item.id}>
       <div className="item-title">{item.title}</div>
-      <div className="item-action">
+      <div className="item-actions">
         {getRemoveEl(item.id)}
         {getUpdateEl(item.url)}
       </div>

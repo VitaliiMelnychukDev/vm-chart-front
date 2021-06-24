@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import useSearchBase from '../search/searchBase';
+import useSearchBase from '../base/searchBase';
 import { apiSongPath } from '../../constants/api/song';
 
 const useSearchSongs = (filters = {}) => {

@@ -1,4 +1,3 @@
-import useGetChart from '../../../hooks/chart/getChart';
 import { useParams } from 'react-router-dom';
 import MainContentWrapper from '../../shared/MainContentWrapper/MainContentWrapper';
 import { chartPath } from '../../../constants/paths/chart';
@@ -8,10 +7,16 @@ import Alert from '@material-ui/lab/Alert';
 import { useTranslation } from 'react-i18next';
 import { StatusCodes } from 'http-status-codes';
 import Song from './Song/Song';
+import useGetChartBySlug from '../../../hooks/chart/getChartBySlug';
+import { useEffect } from 'react';
 const Chart = () => {
   const { t } = useTranslation();
   const { slug } = useParams();
-  const [chart, loadingStatus] = useGetChart(slug);
+  const [chart, setChartSlugToGet, loadingStatus] = useGetChartBySlug(slug);
+
+  useEffect(() => {
+    setChartSlugToGet(slug);
+  }, []);
 
   const getSongs = () => {
     let chartPosition= 0;
@@ -20,6 +25,7 @@ const Chart = () => {
       chartPosition++;
       const songObject = song.song;
       return <Song
+        key={songObject._id}
         author={songObject.author}
         year={songObject.year}
         position={chartPosition}

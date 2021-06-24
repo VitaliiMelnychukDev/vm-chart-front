@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { apiChartPath } from '../../constants/api/chart';
-import useSearchBase from '../search/searchBase';
+import useSearchBase from '../base/searchBase';
 
 const useSearchCharts = (filters = {}) => {
   const [charts, setCharts] = useState([]);
-  const [pageCount, searchResponse, loadingStatus, setPage ] = useSearchBase(apiChartPath.Search, filters);
+  const [pageCount, searchResponse, loadingStatus, setPage, setFilters] = useSearchBase(apiChartPath.Search, filters);
 
   useEffect(() => {
     if (searchResponse.charts) {
@@ -13,7 +13,7 @@ const useSearchCharts = (filters = {}) => {
   },[searchResponse]);
 
   return [
-    pageCount, charts, loadingStatus, setPage
+    pageCount, charts, loadingStatus, setPage, setFilters
   ]
 };
 
