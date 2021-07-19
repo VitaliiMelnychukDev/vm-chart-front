@@ -24,7 +24,7 @@ services:
       - CHOKIDAR_USEPOLLING=true
       - VIRTUAL_HOST=vm-charts.local.com
     depends_on:
-      - nginx-proxy
+      - nginx-proxy-front
 
   nginx-proxy-front:
     image: jwilder/nginx-proxy
