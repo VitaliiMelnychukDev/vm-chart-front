@@ -1,0 +1,28 @@
+version: "3.5"
+
+services:
+  vm-charts-prod:
+    build: .
+    ports:
+      - 80:80
+    container_name: vm-charts
+    networks:
+      - vm-charts-network
+  vm-charts-local:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.local
+    ports:
+      - 80:3000
+    container_name: vm-charts
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    networks:
+      - vm-charts-network
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+networks:
+  vm-charts-network:
+    name: vm-charts-network
