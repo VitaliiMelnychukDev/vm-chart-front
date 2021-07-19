@@ -12,9 +12,9 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile.local
-    ports:
-      - 80:3000
     container_name: vm-charts
+    ports:
+      - 3000:3000
     volumes:
       - ./:/app
       - /app/node_modules
@@ -22,6 +22,18 @@ services:
       - vm-charts-network
     environment:
       - CHOKIDAR_USEPOLLING=true
+      - VIRTUAL_HOST=vm-charts.local.com
+    depends_on:
+      - nginx-proxy
+
+  nginx-proxy-front:
+    image: jwilder/nginx-proxy
+    ports:
+      - 80:80
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    networks:
+      - vm-charts-network
 
 networks:
   vm-charts-network:
