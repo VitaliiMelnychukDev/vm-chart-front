@@ -1,5 +1,5 @@
 {
-  "CHARTS_API_URL": "http://localhost:3001/",
+  "CHARTS_API_URL": "http://api.vm-charts.local.com/",
   "PAGINATION": {
     "COUNT_PER_PAGE": 9
   }
